@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		343F451F29C36D7000AAE2BB /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343F451E29C36D7000AAE2BB /* ResultView.swift */; };
+		343F455C29CB15A700AAE2BB /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343F455B29CB15A700AAE2BB /* CustomTabBar.swift */; };
 		3455B9A4298A862100600EFF /* BringOutYourTrueColorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455B9A3298A862100600EFF /* BringOutYourTrueColorsApp.swift */; };
-		3455B9A6298A862100600EFF /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455B9A5298A862100600EFF /* StartView.swift */; };
+		3455B9A6298A862100600EFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455B9A5298A862100600EFF /* ContentView.swift */; };
 		3455B9A8298A862300600EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3455B9A7298A862300600EFF /* Assets.xcassets */; };
 		3455B9AB298A862300600EFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3455B9AA298A862300600EFF /* Preview Assets.xcassets */; };
 		3455B9B5298A862300600EFF /* BringOutYourTrueColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455B9B4298A862300600EFF /* BringOutYourTrueColorsTests.swift */; };
@@ -36,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		343F451E29C36D7000AAE2BB /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		343F455B29CB15A700AAE2BB /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		3455B9A0298A862100600EFF /* BringOutYourTrueColors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BringOutYourTrueColors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3455B9A3298A862100600EFF /* BringOutYourTrueColorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BringOutYourTrueColorsApp.swift; sourceTree = "<group>"; };
-		3455B9A5298A862100600EFF /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		3455B9A5298A862100600EFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3455B9A7298A862300600EFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3455B9AA298A862300600EFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3455B9B0298A862300600EFF /* BringOutYourTrueColorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BringOutYourTrueColorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,12 +102,14 @@
 		3455B9A2298A862100600EFF /* BringOutYourTrueColors */ = {
 			isa = PBXGroup;
 			children = (
-				3455B9A3298A862100600EFF /* BringOutYourTrueColorsApp.swift */,
-				3455B9A5298A862100600EFF /* StartView.swift */,
+				3455B9A5298A862100600EFF /* ContentView.swift */,
 				34CA6E70298A968400A8E456 /* MainView.swift */,
-				3455B9A7298A862300600EFF /* Assets.xcassets */,
-				3455B9A9298A862300600EFF /* Preview Content */,
+				343F451E29C36D7000AAE2BB /* ResultView.swift */,
 				34CA6E7629A3608000A8E456 /* ViewModel.swift */,
+				343F455B29CB15A700AAE2BB /* CustomTabBar.swift */,
+				3455B9A7298A862300600EFF /* Assets.xcassets */,
+				3455B9A3298A862100600EFF /* BringOutYourTrueColorsApp.swift */,
+				3455B9A9298A862300600EFF /* Preview Content */,
 			);
 			path = BringOutYourTrueColors;
 			sourceTree = "<group>";
@@ -264,9 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				34CA6E71298A968400A8E456 /* MainView.swift in Sources */,
-				3455B9A6298A862100600EFF /* StartView.swift in Sources */,
+				3455B9A6298A862100600EFF /* ContentView.swift in Sources */,
 				34CA6E7729A3608000A8E456 /* ViewModel.swift in Sources */,
 				3455B9A4298A862100600EFF /* BringOutYourTrueColorsApp.swift in Sources */,
+				343F455C29CB15A700AAE2BB /* CustomTabBar.swift in Sources */,
+				343F451F29C36D7000AAE2BB /* ResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

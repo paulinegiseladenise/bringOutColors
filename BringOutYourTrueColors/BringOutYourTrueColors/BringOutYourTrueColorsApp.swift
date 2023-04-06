@@ -12,7 +12,7 @@ struct BringOutYourTrueColorsApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView(viewModel: ViewModel())
+                CustomTabBar()
             }
         }
     }

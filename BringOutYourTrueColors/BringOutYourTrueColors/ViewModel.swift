@@ -12,41 +12,51 @@ struct ViewModel {
     
     var options = [
         ["Gröna, bruna", "Blåa, gråa", "Blandad"],
-        ["Gröna, bruna", "Blåa, gråa", "Blandad"],
+        ["Rött, blont, brunt", "Grått, askblont, svart", "Skiftande"],
         ["Guld", "Silver", "Båda"]
     ]
     
-    var selections = [0, 0, 0]
+    var selections: [Int?] = [nil, nil, nil]
+    var selectionsMade = 0
     
     var results = ["You have warm colors",
                    "You have cool colors",
                    "You have both warm and cool colors"]
     
     var allSelectionsMade: Bool {
-        return !selections.contains(0)
+        return selectionsMade == 3
     }
     
-    mutating func selectOption(at Index: Int, optionIndex: Int) {
-        selections[Index] = optionIndex
+    func selectOption(at Index: Int, optionIndex: Int) -> ViewModel {
+        var newSelections = self.selections
+        newSelections[Index] = optionIndex
+        var newViewModel = ViewModel(selections: newSelections)
+        newViewModel.selectionsMade = selectionsMade + 1
+        return newViewModel
     }
     
-    mutating func calculateResult() -> String {
+    func optionSelected(optionIndex: Int, at index: Int) -> Bool {
+        return selections[index] == optionIndex
+    }
+    
+    func calculateResult() -> String? {
+        guard allSelectionsMade else {
+            return nil
+        }
         let counts =
         selections.reduce(into: [0, 0, 0]) { counts, selection in
-            counts[selection] += 1
+            if let selection = selection {
+                counts[selection] += 1
+            }
         }
-        //        Note to self... behöver fixa nedanstående kod så att det står make your result is från början och inte you have warm colors....... det är i ifsatsen det blir fel...
         let maxCount = counts.max()!
         let resultIndex = counts.firstIndex(of: maxCount)!
-        if resultIndex == 0 {
-            return "Warm... I need to change this code..."
-        } else {
-            return results[resultIndex]
-        }
-        
-        func resetTest() {
-            self.selections = [0, 0, 0]
-        }
+        return results[resultIndex]
+    }
+    
+    func resetTest() -> ViewModel {
+        return ViewModel()
     }
 }
+
 
