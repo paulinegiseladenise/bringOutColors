@@ -11,27 +11,35 @@ import SwiftUI
 struct ViewModel {
     
     var options = [
-        ["Gröna, bruna", "Blåa, gråa", "Blandad"],
-        ["Rött, blont, brunt", "Grått, askblont, svart", "Skiftande"],
+        ["Gröna, blågröna, gulgröna, bruna", "Blåa, gråa, svarta", "Blandad"],
+        ["Rött, gyllenblont, brunt", "Grått, askblont, kall brunt, svart", "Skiftande"],
         ["Guld", "Silver", "Båda"]
     ]
-    
+
     var selections: [Int?] = [nil, nil, nil]
-    
-    var results = ["You have warm colors",
-                   "You have cool colors",
-                   "You have both warm and cool colors"]
-    
+    var selectionsMade = 0
+
+    var results = ["Dina färger är varma",
+                   "Dina färger är kalla",
+                   "Dina färger är neutrala"]
+
     var allSelectionsMade: Bool {
-        return !selections.contains(nil)
+        return selections.compactMap { $0 }.count == options.count
     }
-    
+
+
     func selectOption(at Index: Int, optionIndex: Int) -> ViewModel {
         var newSelections = self.selections
         newSelections[Index] = optionIndex
-        return ViewModel(selections: newSelections)
+        var newViewModel = ViewModel(selections: newSelections)
+        newViewModel.selectionsMade = selectionsMade + 1
+        return newViewModel
     }
-    
+
+    func optionSelected(optionIndex: Int, at index: Int) -> Bool {
+        return selections[index] == optionIndex
+    }
+
     func calculateResult() -> String? {
         guard allSelectionsMade else {
             return nil
@@ -46,11 +54,9 @@ struct ViewModel {
         let resultIndex = counts.firstIndex(of: maxCount)!
         return results[resultIndex]
     }
-    
-    
-//            nedan resetar man testet
-        func resetTest() -> ViewModel {
-            return ViewModel()
+
+    func resetTest() -> ViewModel {
+        return ViewModel()
     }
 }
 
